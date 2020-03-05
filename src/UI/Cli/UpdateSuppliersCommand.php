@@ -47,7 +47,7 @@ class UpdateSuppliersCommand extends Command
 
         $output->writeln("Collected data from JSON file.");
 
-        $envelope = $this->bus->dispatch(new UpdateSuppliers());
+        $envelope = $this->bus->dispatch(new UpdateSuppliers($sheetId));
 
         $result = $envelope->last(HandledStamp::class)->getResult();
 
