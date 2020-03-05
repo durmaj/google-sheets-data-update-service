@@ -44,7 +44,7 @@ class Supplier implements SupplierInterface
 
     /**
      *
-     * @var integer
+     * @var string
      */
     protected $gtin;
 
@@ -56,7 +56,7 @@ class Supplier implements SupplierInterface
 
     /**
      *
-     * @var integer
+     * @var string
      */
     protected $price;
 
@@ -185,17 +185,17 @@ class Supplier implements SupplierInterface
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getGtin(): int
+    public function getGtin(): string
     {
         return $this->gtin;
     }
 
     /**
-     * @param int $gtin
+     * @param string $gtin
      */
-    public function setGtin(int $gtin): void
+    public function setGtin(string $gtin): void
     {
         $this->gtin = $gtin;
     }
@@ -217,17 +217,17 @@ class Supplier implements SupplierInterface
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getPrice(): int
+    public function getPrice(): string
     {
         return $this->price;
     }
 
     /**
-     * @param int $price
+     * @param string $price
      */
-    public function setPrice(int $price): void
+    public function setPrice(string $price): void
     {
         $this->price = $price;
     }

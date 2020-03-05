@@ -1,9 +1,7 @@
 <?php
 
-namespace App\MessageHandler;
+namespace App\Application\Google\Supplier;
 
-
-use App\Application\Google\Supplier\UpdateSuppliersCommand;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class UpdateSuppliersHandler implements MessageHandlerInterface

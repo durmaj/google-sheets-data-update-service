@@ -15,13 +15,12 @@
         <field name="title" column="title" type="string" length="255" />
         <field name="description" column="description" type="string" length="255" />
         <field name="summary" column="summary" type="string" length="255" />
-        <field name="gtin" column="gtin" type="integer" />
+        <field name="gtin" column="gtin" type="string" length="255"/>
         <field name="mpn" column="mpn" type="string" length="100" />
-        <field name="price" column="price" type="float" />
-        <field name="currency" column="currency" type="string" length="10" nullable="true" />
+        <field name="price" column="price" type="string" nullable="true"/>
         <field name="shortcode" column="shortcode" type="string" length="255" nullable="true" />
         <field name="category" column="category" type="string" length="100" nullable="true" />
-        <field name="date" column="date" type="date" />
+        <field name="date" column="date" type="date" nullable="true"/>
         <field name="sub" column="sub" type="string" nullable="true" />
         <field name="dateUpdated" column="date_updated" type="date" />
 

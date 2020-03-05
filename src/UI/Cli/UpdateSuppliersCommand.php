@@ -5,10 +5,12 @@ namespace App\UI\Cli;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
 use App\Application\Google\Supplier\UpdateSuppliersCommand as UpdateSuppliers;
+use App\Application\Google\Supplier\GetSuppliersFromJsonCommand as GetSuppliers;
 
 
 class UpdateSuppliersCommand extends Command
@@ -27,6 +29,7 @@ class UpdateSuppliersCommand extends Command
         $this
             ->setName('app:update-suppliers')
             ->setDescription('Updates suppliers data in specified sheet in Google Sheets.')
+            ->addArgument('sheet_id', InputArgument::REQUIRED, 'Which sheet do you want to update?')
         ;
     }
 
@@ -36,11 +39,19 @@ class UpdateSuppliersCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $output->writeln("starting procedure");
+
         $sheetId = $input->getArgument('sheet_id');
+
+//        $envelope = $this->bus->dispatch(new GetSuppliers());
+
+        $output->writeln("Collected data from JSON file.");
 
         $envelope = $this->bus->dispatch(new UpdateSuppliers());
 
         $result = $envelope->last(HandledStamp::class)->getResult();
+
+        dump($result);die;
 
         $output->writeln("<info>Suppliers updated in sheet ID: $sheetId <br>
 Date: <br>

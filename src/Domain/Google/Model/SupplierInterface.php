@@ -10,10 +10,9 @@ interface SupplierInterface
     public function getTitle(): string;
     public function getDescription(): string;
     public function getSummary(): string;
-    public function getGtin(): int;
+    public function getGtin(): string;
     public function getMpn(): string;
-    public function getPrice(): int;
-    public function getCurrency(): string;
+    public function getPrice(): string;
     public function getShortcode(): string;
     public function getCategory(): string;
     public function getDate(): \DateTime;
