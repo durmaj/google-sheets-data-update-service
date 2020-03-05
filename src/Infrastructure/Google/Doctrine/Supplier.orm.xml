@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Domain\Google\Model\Supplier" table="suppliers" repository-class="App\Infrastructure\Google\Doctrine\Repository\SupplierRepository">
+
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="supplierId" column="supplier_id" type="integer" length="255" />
+
+        <field name="title" column="title" type="string" length="255" />
+        <field name="description" column="description" type="string" length="255" />
+        <field name="summary" column="summary" type="string" length="255" />
+        <field name="gtin" column="gtin" type="integer" />
+        <field name="mpn" column="mpn" type="string" length="100" />
+        <field name="price" column="price" type="float" />
+        <field name="currency" column="currency" type="string" length="10" nullable="true" />
+        <field name="shortcode" column="shortcode" type="string" length="255" nullable="true" />
+        <field name="category" column="category" type="string" length="100" nullable="true" />
+        <field name="date" column="date" type="date" />
+        <field name="sub" column="sub" type="string" nullable="true" />
+        <field name="dateUpdated" column="date_updated" type="date" />
+
+    </entity>
+
+</doctrine-mapping>
